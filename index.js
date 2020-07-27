@@ -1,7 +1,9 @@
 const express = require('express');
-const app = express();
+const cors = require('cors');
 const {countries} = require('./countries');
 const fakeData = require('./data');
+
+const app = express();
 
 const fields = [
     'name',
@@ -15,6 +17,8 @@ const fields = [
 ];
 
 const getRandomElement = (array) => array[Math.floor(Math.random() * array.length)];
+
+app.use(cors());
 
 const router = express.Router();
 
